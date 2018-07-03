@@ -13,4 +13,22 @@ public class EaselJS extends EaselJSProperties {
 
 	protected EaselJS() {
 	}
+
+	/**
+	 * Retrieves the build date for this release in UTC format.
+	 * 
+	 * @return the build date for this release in UTC format.
+	 */
+	public final native String getBuildDate() /*-{
+		return EaselJS.buildDate;
+	}-*/;
+
+	/**
+	 * Retrieves the version string for this release.
+	 * 
+	 * @return the version string for this release.
+	 */
+	public final native String getVersion() /*-{
+		return EaselJS.version;
+	}-*/;
 }

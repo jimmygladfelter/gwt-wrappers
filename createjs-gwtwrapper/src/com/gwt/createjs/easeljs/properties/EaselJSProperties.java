@@ -18,7 +18,7 @@ public class EaselJSProperties extends BaseJso implements EaselJSPropertyNames {
 	 * 
 	 * @return the build date for this release in UTC format.
 	 */
-	public final String getBuildDate() {
+	public final String getBuildDateProperty() {
 		return this.getStringProperty(BUILD_DATE);
 	}
 
@@ -27,7 +27,7 @@ public class EaselJSProperties extends BaseJso implements EaselJSPropertyNames {
 	 * 
 	 * @return the version string for this release.
 	 */
-	public final String getVersion() {
+	public final String getVersionProperty() {
 		return this.getStringProperty(VERSION);
 	}
 }
