@@ -1,5 +1,6 @@
 package com.gwt.createjs.easeljs;
 
+import com.google.gwt.core.client.JavaScriptObject;
 import com.gwt.createjs.easeljs.properties.EventProperties;
 
 /**
@@ -18,5 +19,17 @@ public class Event extends EventProperties {
 	
 	public final native Event clone() /*-{
 		return this.clone();
+	}-*/;
+	
+	public final native void preventDefault() /*-{
+		this.preventDefault();
+	}-*/;
+	
+	public final native void remove() /*-{
+		this.remove();
+	}-*/;
+	
+	public final native Event set(JavaScriptObject jso) /*-{
+		return this.set();
 	}-*/;
 }
