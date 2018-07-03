@@ -1,8 +1,10 @@
 package com.app.gwt.client.lib.js;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsDate;
@@ -234,7 +236,7 @@ public class BaseJso extends JavaScriptObject {
 	 *            - the list to convert.
 	 * @return a javascript array containing the values of the list.
 	 */
-	public static <M> BaseJsoArray<M> convertToJsArray(List<M> list) {
+	public static <M> BaseJsoArray<M> convertToJsArray(Collection<M> list) {
 		BaseJsoArray<M> jsArray = null;
 		if (list != null) {
 			jsArray = createObject().cast();
@@ -318,5 +320,47 @@ public class BaseJso extends JavaScriptObject {
 		if (propertyName != null) {
 			delete this[propertyName];
 		}
+	}-*/;
+
+	/**
+	 * Copies the projects from the specified object onto this object.
+	 * 
+	 * @param properties
+	 *            - an object with properties.
+	 */
+	public final native void setProperties(BaseJso properties) /*-{
+		if (properties != null) {
+			for ( var k in properties) {
+				this[k] = properties[k];
+			}
+		}
+	}-*/;
+
+	/**
+	 * Copies the projects from the specified object onto this object.
+	 * 
+	 * @param propertiesToGet
+	 *            - an object with properties.
+	 * @return an object with the specified properties from this object.
+	 */
+	public final BaseJso getProperties(Set<String> propertiesToGet) {
+		return getProperties(convertToJsArray(propertiesToGet));
+	}
+
+	/**
+	 * Copies the projects from the specified object onto this object.
+	 * 
+	 * @param propertiesToGet
+	 *            - an object with properties.
+	 * @return an object with the specified properties from this object.
+	 */
+	protected final native BaseJso getProperties(BaseJsoArray<String> propertiesToGet) /*-{
+		var obj = {};
+		if (propertiesToGet != null) {
+			for ( var k in propertiesToGet) {
+				obj[k] = this[k];
+			}
+		}
+		return obj;
 	}-*/;
 }

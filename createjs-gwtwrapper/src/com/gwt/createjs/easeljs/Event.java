@@ -15,4 +15,8 @@ public class Event extends EventProperties {
 
 	protected Event() {
 	}
+	
+	public final native Event clone() /*-{
+		return this.clone();
+	}-*/;
 }
