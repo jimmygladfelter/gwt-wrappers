@@ -160,23 +160,6 @@ public class Rectangle extends RectangleProperties {
 	}-*/;
 
 	/**
-	 * Sets the specified values on this instance.
-	 * 
-	 * @param x
-	 *            - x position.
-	 * @param y
-	 *            - y position.
-	 * @param width
-	 *            - the width of the Rectangle.
-	 * @param height
-	 *            - the height of the Rectangle.
-	 * @return this instance. Useful for chaining method calls.
-	 */
-	public final native Rectangle setValues(int x, int y, int width, int height) /*-{
-		return this.setValues(x, y, width, height);
-	}-*/;
-
-	/**
 	 * Returns a new rectangle which contains this rectangle and the specified
 	 * rectangle.
 	 * 
