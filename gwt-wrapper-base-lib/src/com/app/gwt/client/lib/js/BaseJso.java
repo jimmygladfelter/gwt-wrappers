@@ -410,7 +410,7 @@ public class BaseJso extends JavaScriptObject {
 	 */
 	public final <M> BaseJsoArray<M> getJsArrayProperty(String propertyName) {
 		BaseJsoArray<M> array = null;
-		JavaScriptObject arrayObj = this.getJsObjectProperty(propertyName);
+		JavaScriptObject arrayObj = this.getJsoProperty(propertyName);
 		if (arrayObj != null) {
 			try {
 				array = arrayObj.cast();
@@ -443,12 +443,12 @@ public class BaseJso extends JavaScriptObject {
 	 *            - the name of the property.
 	 * @return a javascript object.
 	 */
-	public final JavaScriptObject getJsObjectProperty(String propertyName) {
-		JavaScriptObject jso = null;
+	public final BaseJso getJsoProperty(String propertyName) {
+		BaseJso jso = null;
 		Object obj = this.getProperty(propertyName);
 		if (obj != null) {
 			try {
-				jso = (JavaScriptObject) obj;
+				jso = (BaseJso) obj;
 			} catch (Exception ex) {
 				// could not cast...
 			}
