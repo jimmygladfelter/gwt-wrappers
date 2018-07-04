@@ -18,8 +18,8 @@ public class RectangleProperties extends BaseJso implements RectanglePropertyNam
 	 * 
 	 * @return the height of the rectangle.
 	 */
-	public int getHeightProperty() {
-		return this.getIntegerProperty(HEIGHT);
+	public Number getHeightProperty() {
+		return this.getNumberProperty(HEIGHT);
 	}
 
 	/**
@@ -28,8 +28,8 @@ public class RectangleProperties extends BaseJso implements RectanglePropertyNam
 	 * @param height
 	 *            - the height of the rectangle.
 	 */
-	public void setHeightProperty(int height) {
-		this.setProperty(HEIGHT, height);
+	public void setHeightProperty(Number height) {
+		this.setNumberProperty(HEIGHT, height);
 	}
 
 	/**
@@ -37,8 +37,8 @@ public class RectangleProperties extends BaseJso implements RectanglePropertyNam
 	 * 
 	 * @return the width of the rectangle.
 	 */
-	public int getWidthProperty() {
-		return this.getIntegerProperty(WIDTH);
+	public Number getWidthProperty() {
+		return this.getNumberProperty(WIDTH);
 	}
 
 	/**
@@ -47,8 +47,8 @@ public class RectangleProperties extends BaseJso implements RectanglePropertyNam
 	 * @param width
 	 *            - the width of the rectangle.
 	 */
-	public void setWidthProperty(int width) {
-		this.setProperty(WIDTH, width);
+	public void setWidthProperty(Number width) {
+		this.setNumberProperty(WIDTH, width);
 	}
 
 	/**
@@ -56,8 +56,8 @@ public class RectangleProperties extends BaseJso implements RectanglePropertyNam
 	 * 
 	 * @return the X position of the rectangle.
 	 */
-	public int getXProperty() {
-		return this.getIntegerProperty(X);
+	public Number getXProperty() {
+		return this.getNumberProperty(X);
 	}
 
 	/**
@@ -66,8 +66,8 @@ public class RectangleProperties extends BaseJso implements RectanglePropertyNam
 	 * @param x
 	 *            - the X position of the rectangle.
 	 */
-	public void setXProperty(int x) {
-		this.setProperty(X, x);
+	public void setXProperty(Number x) {
+		this.setNumberProperty(X, x);
 	}
 
 	/**
@@ -75,8 +75,8 @@ public class RectangleProperties extends BaseJso implements RectanglePropertyNam
 	 * 
 	 * @return the Y position of the rectangle.
 	 */
-	public int getYProperty() {
-		return this.getIntegerProperty(Y);
+	public Number getYProperty() {
+		return this.getNumberProperty(Y);
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class RectangleProperties extends BaseJso implements RectanglePropertyNam
 	 * @param y
 	 *            - the Y position of the rectangle.
 	 */
-	public void setYProperty(int y) {
-		this.setProperty(Y, y);
+	public void setYProperty(Number y) {
+		this.setNumberProperty(Y, y);
 	}
 }

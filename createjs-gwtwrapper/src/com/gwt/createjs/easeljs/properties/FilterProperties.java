@@ -45,8 +45,8 @@ public class FilterProperties extends BaseJso implements FilterPropertyNames {
 	 *            - a flag stating that this filter uses a context draw mode and
 	 *            cannot be batched into imageData processing.
 	 */
-	public void setUsesContextProperty(boolean usesContext) {
-		this.setProperty(USES_CONTEXT, usesContext);
+	public void setUsesContextProperty(Boolean usesContext) {
+		this.setBooleanProperty(USES_CONTEXT, usesContext);
 	}
 
 	/**

@@ -44,7 +44,8 @@ public class Filter<M extends FilterProperties> extends CreateJsJso<M> {
 	 *            - the height to use for the source rect.
 	 * @return true if the filter was applied successfully.
 	 */
-	public final native boolean applyFilter(CanvasRenderingContext2D ctx, int x, int y, int width, int height) /*-{
+	public final native boolean applyFilter(CanvasRenderingContext2D ctx, double x, double y, double width,
+			double height) /*-{
 		return this.applyFilter(ctx, x, y, width, height);
 	}-*/;
 
@@ -72,8 +73,8 @@ public class Filter<M extends FilterProperties> extends CreateJsJso<M> {
 	 *            passed to y.
 	 * @return true if the filter was applied successfully.
 	 */
-	public final native boolean applyFilter(CanvasRenderingContext2D ctx, int x, int y, int width, int height,
-			CanvasRenderingContext2D targetCtx, int targetX, int targetY) /*-{
+	public final native boolean applyFilter(CanvasRenderingContext2D ctx, double x, double y, double width,
+			double height, CanvasRenderingContext2D targetCtx, double targetX, double targetY) /*-{
 		return this.applyFilter(ctx, x, y, width, height, targetCtx, targetX,
 				targetY);
 	}-*/;

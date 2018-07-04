@@ -10,8 +10,6 @@ import com.gwt.createjs.easeljs.propertynames.AlphaMapFilterPropertyNames;
  */
 public class AlphaMapFilterProperties extends FilterProperties implements AlphaMapFilterPropertyNames {
 
-	
-	
 	protected AlphaMapFilterProperties() {
 	}
 
@@ -23,6 +21,6 @@ public class AlphaMapFilterProperties extends FilterProperties implements AlphaM
 	 *         result. This should be exactly the same dimensions as the target.
 	 */
 	public BaseJso getAlphaMapProperty() {
-		return (BaseJso) this.getProperty(ALPHA_MAP);
+		return this.getJsoProperty(ALPHA_MAP);
 	}
 }

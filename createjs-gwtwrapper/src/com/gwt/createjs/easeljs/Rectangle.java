@@ -21,7 +21,7 @@ public class Rectangle extends CreateJsJso<RectangleProperties> {
 	 * @param height
 	 * @return
 	 */
-	public final native static Rectangle create(int x, int y, int width, int height) /*-{
+	public final native static Rectangle create(double x, double y, double width, double height) /*-{
 		return new createjs.Rectangle(x, y, width, height);
 	}-*/;
 
@@ -46,7 +46,7 @@ public class Rectangle extends CreateJsJso<RectangleProperties> {
 	 * @return true if the described point or rectangle is contained within this
 	 *         rectangle.
 	 */
-	public final Boolean contains(int x, int y) {
+	public final Boolean contains(double x, double y) {
 		return this.contains(x, y, 0, 0);
 	}
 
@@ -65,7 +65,7 @@ public class Rectangle extends CreateJsJso<RectangleProperties> {
 	 * @return true if the described point or rectangle is contained within this
 	 *         rectangle.
 	 */
-	public final native Boolean contains(int x, int y, int width, int height) /*-{
+	public final native Boolean contains(double x, double y, double width, double height) /*-{
 		return this.contains(x, y, width, height);
 	}-*/;
 
@@ -89,7 +89,7 @@ public class Rectangle extends CreateJsJso<RectangleProperties> {
 	 *            - y position of the point or rectangle.
 	 * @return this instance. Useful for chaining method calls.
 	 */
-	public final Rectangle extend(int x, int y) {
+	public final Rectangle extend(double x, double y) {
 		return this.extend(x, y, 0, 0);
 	}
 
@@ -106,7 +106,7 @@ public class Rectangle extends CreateJsJso<RectangleProperties> {
 	 *            - the height of the rectangle.
 	 * @return this instance. Useful for chaining method calls.
 	 */
-	public final native Rectangle extend(int x, int y, int width, int height) /*-{
+	public final native Rectangle extend(double x, double y, double width, double height) /*-{
 		return this.extend(x, y, width, height);
 	}-*/;
 
@@ -156,7 +156,7 @@ public class Rectangle extends CreateJsJso<RectangleProperties> {
 	 *            - the right padding.
 	 * @return this instance. Useful for chaining method calls.
 	 */
-	public final native Rectangle pad(int top, int left, int bottom, int right) /*-{
+	public final native Rectangle pad(double top, double left, double bottom, double right) /*-{
 		return this.pad(top, left, bottom, right);
 	}-*/;
 

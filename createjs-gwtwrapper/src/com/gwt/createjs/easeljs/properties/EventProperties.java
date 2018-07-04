@@ -68,8 +68,8 @@ public class EventProperties extends BaseJso implements EventPropertyNames {
 	 * 
 	 * @return the current event phase.
 	 */
-	public final Integer getEventPhaseProperty() {
-		return this.getIntegerProperty(EVENT_PHASE);
+	public final Number getEventPhaseProperty() {
+		return this.getNumberProperty(EVENT_PHASE);
 	}
 
 	/**
@@ -117,8 +117,8 @@ public class EventProperties extends BaseJso implements EventPropertyNames {
 	 * 
 	 * @return the epoch time at which this event was created.
 	 */
-	public final Long getTimeStampProperty() {
-		return this.getLongProperty(TIME_STAMP);
+	public final Number getTimeStampProperty() {
+		return this.getNumberProperty(TIME_STAMP);
 	}
 
 	/**

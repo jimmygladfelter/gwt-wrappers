@@ -19,6 +19,6 @@ public class AlphaMaskFilterProperties extends FilterProperties implements Alpha
 	 * @return the image (or canvas) to use as the mask.
 	 */
 	public BaseJso getAlphaMaskProperty() {
-		return (BaseJso) this.getProperty(ALPHA_MASK);
+		return this.getJsoProperty(ALPHA_MASK);
 	}
 }
