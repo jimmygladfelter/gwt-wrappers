@@ -32,7 +32,7 @@ public class BaseJso extends JavaScriptObject {
 		Object obj = this.getProperty(propertyName);
 		if (obj != null) {
 			try {
-				b = (Boolean) obj;
+				b = (boolean) obj;
 			} catch (Exception ex) {
 				// maybe its a string, try that?
 				String str = this.getStringProperty(propertyName);
@@ -42,6 +42,34 @@ public class BaseJso extends JavaScriptObject {
 			}
 		}
 		return b;
+	}
+
+	/**
+	 * Retrieves a Double property of this object.
+	 * 
+	 * @param propertyName
+	 *            - the name of the property.
+	 * @return a Double value.
+	 */
+	public final Double getDoubleProperty(String propertyName) {
+		Double d = null;
+		Object obj = this.getProperty(propertyName);
+		if (obj != null) {
+			try {
+				d = (double) obj;
+			} catch (Exception ex) {
+				// maybe its a string, try that?
+				String str = this.getStringProperty(propertyName);
+				if (str != null) {
+					try {
+						d = Double.parseDouble(str);
+					} catch (Exception ex2) {
+						// could not cast...
+					}
+				}
+			}
+		}
+		return d;
 	}
 
 	/**
@@ -56,7 +84,7 @@ public class BaseJso extends JavaScriptObject {
 		Object obj = this.getProperty(propertyName);
 		if (obj != null) {
 			try {
-				s = (Short) obj;
+				s = (short) obj;
 			} catch (Exception ex) {
 				// maybe its a string, try that?
 				String str = this.getStringProperty(propertyName);
@@ -84,7 +112,7 @@ public class BaseJso extends JavaScriptObject {
 		Object obj = this.getProperty(propertyName);
 		if (obj != null) {
 			try {
-				i = (Integer) obj;
+				i = (int) obj;
 			} catch (Exception ex) {
 				// maybe its a string, try that?
 				String str = this.getStringProperty(propertyName);
@@ -112,7 +140,7 @@ public class BaseJso extends JavaScriptObject {
 		Object obj = this.getProperty(propertyName);
 		if (obj != null) {
 			try {
-				l = (Long) obj;
+				l = (long) obj;
 			} catch (Exception ex) {
 				// maybe its a date, try that?
 				Date d = this.getDateProperty(propertyName);
