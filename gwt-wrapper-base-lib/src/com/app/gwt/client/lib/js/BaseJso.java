@@ -70,186 +70,39 @@ public class BaseJso extends JavaScriptObject {
 	 *            - the name of the property.
 	 * @return a Double value.
 	 */
-	public final Double getDoubleProperty(String propertyName) {
-		Double d = null;
+	public final Number getNumberProperty(String propertyName) {
+		Number n = null;
 		Object obj = this.getProperty(propertyName);
 		if (obj != null) {
 			try {
-				d = (double) obj;
+				n = (double) obj;
 			} catch (Exception ex) {
 				// maybe its a string, try that?
 				String str = this.getStringProperty(propertyName);
 				if (str != null) {
 					try {
-						d = Double.parseDouble(str);
+						n = Double.parseDouble(str);
 					} catch (Exception ex2) {
 						// could not cast...
 					}
 				}
 			}
 		}
-		return d;
+		return n;
 	}
 
 	/**
-	 * Sets a Double property to this object.
+	 * Sets a Number property to this object.
 	 * 
 	 * @param propertyName
 	 *            - the name of the property.
 	 * @param value
-	 *            - a Double value.
+	 *            - a Number value.
 	 */
-	public final void setDoubleProperty(String propertyName, Double value) {
+	public final void setNumberProperty(String propertyName, Number value) {
 		if (propertyName != null) {
 			if (value != null) {
 				double valToSet = value.doubleValue();
-				this.setProperty(propertyName, valToSet);
-			} else {
-				this.deleteProperty(propertyName);
-			}
-		}
-	}
-
-	/**
-	 * Retrieves a Short property of this object.
-	 * 
-	 * @param propertyName
-	 *            - the name of the property.
-	 * @return a Short value.
-	 */
-	public final Short getShortProperty(String propertyName) {
-		Short s = null;
-		Object obj = this.getProperty(propertyName);
-		if (obj != null) {
-			try {
-				s = (short) obj;
-			} catch (Exception ex) {
-				// maybe its a string, try that?
-				String str = this.getStringProperty(propertyName);
-				if (str != null) {
-					try {
-						s = Short.parseShort(str);
-					} catch (Exception ex2) {
-						// could not cast...
-					}
-				}
-			}
-		}
-		return s;
-	}
-
-	/**
-	 * Sets a Short property to this object.
-	 * 
-	 * @param propertyName
-	 *            - the name of the property.
-	 * @param value
-	 *            - a Short value.
-	 */
-	public final void setShortProperty(String propertyName, Short value) {
-		if (propertyName != null) {
-			if (value != null) {
-				short valToSet = value.shortValue();
-				this.setProperty(propertyName, valToSet);
-			} else {
-				this.deleteProperty(propertyName);
-			}
-		}
-	}
-
-	/**
-	 * Retrieves an Integer property of this object.
-	 * 
-	 * @param propertyName
-	 *            - the name of the property.
-	 * @return an Integer value.
-	 */
-	public final Integer getIntegerProperty(String propertyName) {
-		Integer i = null;
-		Object obj = this.getProperty(propertyName);
-		if (obj != null) {
-			try {
-				i = (int) obj;
-			} catch (Exception ex) {
-				// maybe its a string, try that?
-				String str = this.getStringProperty(propertyName);
-				if (str != null) {
-					try {
-						i = Integer.parseInt(str);
-					} catch (Exception ex2) {
-						// could not cast...
-					}
-				}
-			}
-		}
-		return i;
-	}
-
-	/**
-	 * Sets an Integer property to this object.
-	 * 
-	 * @param propertyName
-	 *            - the name of the property.
-	 * @param value
-	 *            - an Integer value.
-	 */
-	public final void setIntegerProperty(String propertyName, Integer value) {
-		if (propertyName != null) {
-			if (value != null) {
-				int valToSet = value.intValue();
-				this.setProperty(propertyName, valToSet);
-			} else {
-				this.deleteProperty(propertyName);
-			}
-		}
-	}
-
-	/**
-	 * Retrieves a Long property of this object.
-	 * 
-	 * @param propertyName
-	 *            - the name of the property.
-	 * @return a Long value.
-	 */
-	public final Long getLongProperty(String propertyName) {
-		Long l = null;
-		Object obj = this.getProperty(propertyName);
-		if (obj != null) {
-			try {
-				l = (long) obj;
-			} catch (Exception ex) {
-				// maybe its a date, try that?
-				Date d = this.getDateProperty(propertyName);
-				if (d != null) {
-					l = d.getTime();
-				} else {
-					// maybe its a string, try that?
-					String str = this.getStringProperty(propertyName);
-					if (str != null) {
-						try {
-							l = Long.parseLong(str);
-						} catch (Exception ex2) {
-							// could not cast...
-						}
-					}
-				}
-			}
-		}
-		return l;
-	}
-
-	/**
-	 * Sets a Long property to this object.
-	 * 
-	 * @param propertyName
-	 *            - the name of the property.
-	 * @param value
-	 *            - a Long value.
-	 */
-	public final void setLongProperty(String propertyName, Long value) {
-		if (propertyName != null) {
-			if (value != null) {
-				long valToSet = value.longValue();
 				this.setProperty(propertyName, valToSet);
 			} else {
 				this.deleteProperty(propertyName);
@@ -271,15 +124,7 @@ public class BaseJso extends JavaScriptObject {
 			try {
 				d = (JsDate) obj;
 			} catch (Exception ex) {
-				// maybe its a long?
-				Long dateTime = this.getLongProperty(propertyName);
-				if (dateTime != null) {
-					d = JsDate.create(dateTime.doubleValue());
-				} else {
-					// maybe its a string?
-					String dateString = this.getStringProperty(propertyName);
-					d = JsDate.create(dateString);
-				}
+				// could not cast...
 			}
 		}
 		return d;
