@@ -338,8 +338,8 @@ public class DisplayObjectProperties extends EventDispatcherProperties implement
 	 * @return a reference to the Container or Stage object that contains this
 	 *         display object, or null if it has not been added to one.
 	 */
-	public BaseJso getParentProperty() {
-		return this.getJsoProperty(PARENT);
+	public Container getParentProperty() {
+		
 	}
 
 	/**
