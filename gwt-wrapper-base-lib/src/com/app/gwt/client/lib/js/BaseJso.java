@@ -45,6 +45,25 @@ public class BaseJso extends JavaScriptObject {
 	}
 
 	/**
+	 * Sets a Boolean property to this object.
+	 * 
+	 * @param propertyName
+	 *            - the name of the property.
+	 * @param value
+	 *            - a Boolean value.
+	 */
+	public final void setBooleanProperty(String propertyName, Boolean value) {
+		if (propertyName != null) {
+			if (value != null) {
+				boolean valToSet = value.booleanValue();
+				this.setProperty(propertyName, valToSet);
+			} else {
+				this.deleteProperty(propertyName);
+			}
+		}
+	}
+
+	/**
 	 * Retrieves a Double property of this object.
 	 * 
 	 * @param propertyName
@@ -70,6 +89,25 @@ public class BaseJso extends JavaScriptObject {
 			}
 		}
 		return d;
+	}
+
+	/**
+	 * Sets a Double property to this object.
+	 * 
+	 * @param propertyName
+	 *            - the name of the property.
+	 * @param value
+	 *            - a Double value.
+	 */
+	public final void setDoubleProperty(String propertyName, Double value) {
+		if (propertyName != null) {
+			if (value != null) {
+				double valToSet = value.doubleValue();
+				this.setProperty(propertyName, valToSet);
+			} else {
+				this.deleteProperty(propertyName);
+			}
+		}
 	}
 
 	/**
@@ -101,6 +139,25 @@ public class BaseJso extends JavaScriptObject {
 	}
 
 	/**
+	 * Sets a Short property to this object.
+	 * 
+	 * @param propertyName
+	 *            - the name of the property.
+	 * @param value
+	 *            - a Short value.
+	 */
+	public final void setShortProperty(String propertyName, Short value) {
+		if (propertyName != null) {
+			if (value != null) {
+				short valToSet = value.shortValue();
+				this.setProperty(propertyName, valToSet);
+			} else {
+				this.deleteProperty(propertyName);
+			}
+		}
+	}
+
+	/**
 	 * Retrieves an Integer property of this object.
 	 * 
 	 * @param propertyName
@@ -126,6 +183,25 @@ public class BaseJso extends JavaScriptObject {
 			}
 		}
 		return i;
+	}
+
+	/**
+	 * Sets an Integer property to this object.
+	 * 
+	 * @param propertyName
+	 *            - the name of the property.
+	 * @param value
+	 *            - an Integer value.
+	 */
+	public final void setIntegerProperty(String propertyName, Integer value) {
+		if (propertyName != null) {
+			if (value != null) {
+				int valToSet = value.intValue();
+				this.setProperty(propertyName, valToSet);
+			} else {
+				this.deleteProperty(propertyName);
+			}
+		}
 	}
 
 	/**
@@ -160,6 +236,25 @@ public class BaseJso extends JavaScriptObject {
 			}
 		}
 		return l;
+	}
+
+	/**
+	 * Sets a Long property to this object.
+	 * 
+	 * @param propertyName
+	 *            - the name of the property.
+	 * @param value
+	 *            - a Long value.
+	 */
+	public final void setLongProperty(String propertyName, Long value) {
+		if (propertyName != null) {
+			if (value != null) {
+				long valToSet = value.longValue();
+				this.setProperty(propertyName, valToSet);
+			} else {
+				this.deleteProperty(propertyName);
+			}
+		}
 	}
 
 	/**
@@ -204,6 +299,25 @@ public class BaseJso extends JavaScriptObject {
 			d = new Date(new Double(jsDate.getTime()).longValue());
 		}
 		return d;
+	}
+
+	/**
+	 * Sets a Date property to this object.
+	 * 
+	 * @param propertyName
+	 *            - the name of the property.
+	 * @param value
+	 *            - a Date value.
+	 */
+	public final void setDateProperty(String propertyName, Date value) {
+		if (propertyName != null) {
+			if (value != null) {
+				JsDate valToSet = JsDate.create(new Long(value.getTime()).doubleValue());
+				this.setProperty(propertyName, valToSet);
+			} else {
+				this.deleteProperty(propertyName);
+			}
+		}
 	}
 
 	/**
