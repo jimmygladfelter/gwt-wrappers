@@ -2,6 +2,7 @@ package com.gwt.createjs.easeljs;
 
 import com.app.gwt.client.lib.js.BaseJso;
 import com.gwt.createjs.base.CreateJsEventHandler;
+import com.gwt.createjs.base.CreateJsJso;
 import com.gwt.createjs.easeljs.properties.EventDispatcherProperties;
 
 /**
@@ -29,7 +30,7 @@ import com.gwt.createjs.easeljs.properties.EventDispatcherProperties;
  * 
  * @author James C. Gladfelter
  */
-public class EventDispatcher extends EventDispatcherProperties {
+public class EventDispatcher extends CreateJsJso<EventDispatcherProperties> {
 
 	protected EventDispatcher() {
 	}

@@ -1,6 +1,7 @@
 package com.gwt.createjs.easeljs;
 
 import com.google.gwt.core.client.JavaScriptObject;
+import com.gwt.createjs.base.CreateJsJso;
 import com.gwt.createjs.easeljs.properties.EventProperties;
 
 /**
@@ -12,7 +13,7 @@ import com.gwt.createjs.easeljs.properties.EventProperties;
  * 
  * @author James C. Gladfelter
  */
-public class Event extends EventProperties {
+public class Event extends CreateJsJso<EventProperties> {
 
 	protected Event() {
 	}

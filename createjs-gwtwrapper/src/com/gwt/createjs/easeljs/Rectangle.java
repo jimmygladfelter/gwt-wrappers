@@ -1,5 +1,6 @@
 package com.gwt.createjs.easeljs;
 
+import com.gwt.createjs.base.CreateJsJso;
 import com.gwt.createjs.easeljs.properties.RectangleProperties;
 
 /**
@@ -9,7 +10,7 @@ import com.gwt.createjs.easeljs.properties.RectangleProperties;
  * 
  * @author James C. Gladfelter
  */
-public class Rectangle extends RectangleProperties {
+public class Rectangle extends CreateJsJso<RectangleProperties> {
 
 	/**
 	 * Creates a new rectangle.

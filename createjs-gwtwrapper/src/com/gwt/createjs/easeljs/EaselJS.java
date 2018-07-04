@@ -1,5 +1,6 @@
 package com.gwt.createjs.easeljs;
 
+import com.gwt.createjs.base.CreateJsJso;
 import com.gwt.createjs.easeljs.properties.EaselJSProperties;
 
 /**
@@ -9,7 +10,7 @@ import com.gwt.createjs.easeljs.properties.EaselJSProperties;
  * 
  * @author James C. Gladfelter
  */
-public class EaselJS extends EaselJSProperties {
+public class EaselJS extends CreateJsJso<EaselJSProperties> {
 
 	protected EaselJS() {
 	}

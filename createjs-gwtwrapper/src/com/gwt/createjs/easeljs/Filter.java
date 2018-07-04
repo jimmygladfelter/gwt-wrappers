@@ -1,7 +1,8 @@
 package com.gwt.createjs.easeljs;
 
 import com.gargoylesoftware.htmlunit.javascript.host.canvas.CanvasRenderingContext2D;
-import com.gwt.createjs.easeljs.properties.EventProperties;
+import com.gwt.createjs.base.CreateJsJso;
+import com.gwt.createjs.easeljs.properties.FilterProperties;
 
 /**
  * Represents the CreateJS - Filter class.<br/>
@@ -23,7 +24,7 @@ import com.gwt.createjs.easeljs.properties.EventProperties;
  * 
  * @author James C. Gladfelter
  */
-public class Filter extends EventProperties {
+public class Filter<M extends FilterProperties> extends CreateJsJso<M> {
 
 	protected Filter() {
 	}
